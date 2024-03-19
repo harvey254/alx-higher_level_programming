@@ -18,20 +18,20 @@ if __name__ == '__main__':
         var_a = int(argv[1])
         var_b = int(argv[3])
         if op == '+':
-            res = add(num_a, num_b)
-            print('{:d} + {:d} = {:d}'.format(num_a, num_b, res))
+            res = add(var_a, var_b)
+            print('{:d} + {:d} = {:d}'.format(var_a, var_b, res))
             exit(0)
         elif op == '-':
-            res = sub(num_a, num_b)
-            print('{:d} - {:d} = {:d}'.format(num_a, num_b, res))
+            res = sub(var_a, var_b)
+            print('{:d} - {:d} = {:d}'.format(var_a, var_b, res))
             exit(0)
         elif op == '*':
-            res = mul(num_a, num_b)
-            print('{:d} * {:d} = {:d}'.format(num_a, num_b, res))
+            res = mul(var_a, var_b)
+            print('{:d} * {:d} = {:d}'.format(var_a, var_b, res))
             exit(0)
         elif op == '/':
-            res = div(num_a, num_b)
-            print('{:d} / {:d} = {:d}'.format(num_a, num_b, res))
+            res = div(var_a, var_b)
+            print('{:d} / {:d} = {:d}'.format(var_a, var_b, res))
             exit(0)
         else:
             print('Unknown operator. Available operators: +, -, * and /')
