@@ -13,7 +13,7 @@ if __name__ == '__main__':
 
     if len_av > 1:
         print(len_av, 'arguments:')
-        for i in range(1, l_av + 1):
+        for i in range(1, len_av + 1):
             print('{:d}: {}'.format(i, av[i]))
     elif len_av == 1:
         print(len_av, 'argument:')
