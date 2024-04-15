@@ -1,0 +1,78 @@
+# 1-my_list.txt
+=============================
+ How to Use 1-my_list.py
+=============================
+
+Using function called ''print_sorted(list)''.
+
+>>> MyList = __import__('1-my_list').MyList
+
+test 1: very large and small numbers
+=======
+>>> mylist = MyList()
+>>> mylist.append(300000000012)
+>>> mylist.append(50)
+>>> mylist.append(-1)
+>>> mylist.append(900000000000000)
+>>> mylist.append(-8000)
+>>> print(mylist)
+[300000000012, 50, -1, 900000000000000, -8000]
+>>> mylist.print_sorted()
+[-8000, -1, 50, 300000000012, 900000000000000]
+>>> print(my_list)
+[-8000, -1, 50, 300000000012, 900000000000000]
+
+test 2: Positive and negative numbers
+=======
+>>> mylist = MyList()
+>>> mylist.append(9)
+>>> mylist.append(7)
+>>> mylist.append(-2)
+>>> mylist.append(3)
+>>> mylist.append(-7)
+>>> print(mylist)
+[9, 7, -2, 3, -7]
+>>> mylist.print_sorted()
+[-7, -2, 3, 7, 9]
+>>> print(mylist)
+[-7, -2, 3, 7, 9]
+
+
+test 3: All numbers are positive
+=======
+>>> mylist = MyList()
+>>> mylist.append(8)
+>>> mylist.append(7)
+>>> mylist.append(4)
+>>> mylist.append(0)
+>>> mylist.append(1)
+>>> print(my_list)
+[8, 7, 4, 0, 1]
+>>> mylist.print_sorted()
+[0, 1, 4, 7, 8]
+>>> print(my_list)
+[0, 1, 4, 7, 8]
+
+
+test 4: No arguments
+=======
+>>> my_list = MyList()
+>>> my_list.print_sorted()
+[]
+
+test 5: All numbers are negative
+=======
+>>> mylist = MyList()
+>>> mylist.append(-8)
+>>> mylist.append(-56)
+>>> mylist.append(-48)
+>>> mylist.append(-90)
+>>> mylist.append(-1)
+>>> print(my_list)
+[-8, -56, -48, -90, -1]
+>>> mylist.print_sorted()
+[-90, -56, -48, -8, -1]
+>>> print(my_list)
+[-90, -56, -48, -8, -1]
+
+
