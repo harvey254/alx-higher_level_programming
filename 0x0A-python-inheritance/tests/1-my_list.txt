@@ -50,18 +50,18 @@ test 3: All numbers are positive
 >>> mylist.append(4)
 >>> mylist.append(0)
 >>> mylist.append(1)
->>> print(my_list)
+>>> print(mylist)
 [8, 7, 4, 0, 1]
 >>> mylist.print_sorted()
 [0, 1, 4, 7, 8]
->>> print(my_list)
+>>> print(mylist)
 [0, 1, 4, 7, 8]
 
 
 test 4: Empty list
 =======
->>> my_list = MyList()
->>> my_list.print_sorted()
+>>> mylist = MyList()
+>>> mylist.print_sorted()
 []
 
 test 5: All numbers are negative
@@ -72,11 +72,11 @@ test 5: All numbers are negative
 >>> mylist.append(-48)
 >>> mylist.append(-90)
 >>> mylist.append(-1)
->>> print(my_list)
+>>> print(mylist)
 [-8, -56, -48, -90, -1]
 >>> mylist.print_sorted()
 [-90, -56, -48, -8, -1]
->>> print(my_list)
+>>> print(mylist)
 [-90, -56, -48, -8, -1]
 
 
