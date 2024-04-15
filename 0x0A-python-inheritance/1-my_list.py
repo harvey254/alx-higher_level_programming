@@ -3,11 +3,11 @@
 
 
 class MyList(list):
-    """Class that inherits from list.
-
-    Args:
-        list: an array to sort in ascending order.
-    """
+    """Class that inherits from list """
+    def __init__(self):
+        """Initialize the object"""
+        super().__init__()
+        
     def print_sorted(self):
         """Prints a list in ascending order.
         """
