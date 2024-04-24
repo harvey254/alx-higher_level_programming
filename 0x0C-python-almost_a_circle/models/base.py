@@ -17,14 +17,14 @@ class Base:
      
 
      def int_validator(self, name, value):
-        """check if value is an integer"""
+        """ check if value is an integer """
         if type(value) is not int:
             raise TypeError('{} must be an integer'.format(name))
         if value <= 0:
             raise ValueError('{} must be > 0'.format(name))
 
      def integer_validator2(self, name, value):
-        """check if value is an integer"""
+        """ check if value is an integer """
         if type(value) is not int:
             raise TypeError('{} must be an integer'.format(name))
         if value < 0:
@@ -32,7 +32,7 @@ class Base:
 
     @staticmethod
     def to_json_string(list_dictionaries):
-        """returns JSON string
+        """ returns JSON string
         args:
             list_dictionaries: list of dictionaries
         return:
@@ -42,7 +42,7 @@ class Base:
 
     @staticmethod
     def from_json_string(json_string):
-        """json to string static method
+        """ json to string static method
         """
         if json_string:
             return json.loads(json_string)
@@ -50,7 +50,7 @@ class Base:
 
     @classmethod
     def save_to_file(cls, list_objs):
-        """writes JSON string to a file
+        """ writes JSON string to a file
         """
         if list_objs:
             j = cls.to_json_string([obj.to_dictionary() for obj in list_objs])
@@ -61,7 +61,7 @@ class Base:
 
     @classmethod
     def create(cls, **dictionary):
-        """return instance with all attributes 
+        """ return instance with all attributes 
         """
         if cls.__name__ == "Rectangle":
             dummy = cls(1, 1)
@@ -72,8 +72,8 @@ class Base:
 
     @classmethod
     def load_from_file(cls):
-        '''Returns a list of instances
-        '''
+        """ Returns a list of instances
+        """
         try:
             filename = cls.__name__ + '.json'
             with open(filename, mode='r') as f:
