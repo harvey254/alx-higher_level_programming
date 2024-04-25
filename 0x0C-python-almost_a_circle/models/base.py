@@ -25,14 +25,29 @@ class Base:
      
 
      def int_validator(self, name, value):
-         """ check if value is an integer """
+         """
+        method validator
+        Arguments;
+        @name: attribute to validate
+        @value: value to validate
+        Returns:
+        Type or Value error if is not an integer or
+        if is not a positive number.
+        """
         if type(value) is not int:
             raise TypeError('{} must be an integer'.format(name))
         if value <= 0:
             raise ValueError('{} must be > 0'.format(name))
 
      def integer_validator2(self, name, value):
-        """ check if value is an integer """
+        """ method validator
+        Arguments;
+        @name: attribute to validate
+        @value: value to validate
+        Returns:
+        Type or Value error if is not an integer or
+        if is not a positive number.
+        """
         if type(value) is not int:
             raise TypeError('{} must be an integer'.format(name))
         if value < 0:
@@ -40,12 +55,12 @@ class Base:
 
     @staticmethod
     def to_json_string(list_dictionaries):
-    """ returns JSON string
+        """ returns JSON string
         args:
             list_dictionaries: list of dictionaries
         return:
             return serialized list or empty list
-    """
+        """
         return json.dumps(list_dictionaries or [])
 
     @staticmethod
@@ -93,7 +108,7 @@ class Base:
 
     @classmethod
     def load_from_file(cls):
-        """Returns a list of instances
+        """ Returns a list of instances
         return:
             list of instance json string
         """
