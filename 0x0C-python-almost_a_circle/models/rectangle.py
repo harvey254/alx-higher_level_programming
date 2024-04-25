@@ -66,18 +66,14 @@ class Rectangle(Base):
         self.__y = value
 
     def display(self):
+        """print into stdout
+        return: na
         """
-        method display - prints in stdout the Rectangle
-        instance with the character #
-        """
-        for pos_y in range(self.__y):
+        for row in range(self.y):
             print()
-        for row in range(self.__height):
-            for pos_x in range(self.__x):
-                print(' ', end='')
-            for column in range(self.__width):
-                print('#', end='')
-            print()
+        for row in range(self.height):
+            print("{}{}".format(" " * self.x, "#" * self.width))
+
 
     def __str__(self):
         """print method"""
