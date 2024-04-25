@@ -5,11 +5,11 @@ import json
 
 
 class Base:
-""" base class
+    """ base class
     Attributes:
         _nb_objects: number of objects created
         id: id of object
-"""
+    """
     __nb_objects = 0
 
     def __init__(self, id=None):
@@ -23,22 +23,22 @@ class Base:
             Base.__nb_objects += 1
             self.id = Base.__nb_objects
      
-
+     @classmethod
      def int_validator(self, name, value):
-         """
-        method validator
-        Arguments;
-        @name: attribute to validate
-        @value: value to validate
-        Returns:
-        Type or Value error if is not an integer or
-        if is not a positive number.
+         """ method validator
+         Arguments;
+         @name: attribute to validate
+         @value: value to validate
+         Returns:
+         Type or Value error if is not an integer or
+         if is not a positive number.
         """
         if type(value) is not int:
             raise TypeError('{} must be an integer'.format(name))
         if value <= 0:
             raise ValueError('{} must be > 0'.format(name))
-
+     
+     @classmethod
      def integer_validator2(self, name, value):
         """ method validator
         Arguments;
