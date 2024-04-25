@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+#!/usr/bin/pythoni3
 """
 Square Module
 """
@@ -20,7 +20,7 @@ class Square(Rectangle):
             formatted list
         """
         return ("[{}] ({}) {}/{} - {}".format(self.__class__.__name__, self.id, self.x, self.y, self.width))
-       @property
+    @property
     def size(self):
         """width getter method
         return:
