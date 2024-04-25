@@ -37,12 +37,12 @@ class Base:
             raise ValueError('{} must be > 0'.format(name))
 
     def int_validator2(self, name, value):
-            """ method validator
-            Arguments;
-            @name: attribute to validate
-            @value: value to validate
-            Returns: Type or Value error if is not an integer or
-            if is not a positive number.
+        """ method validator
+        Arguments;
+        @name: attribute to validate
+        @value: value to validate
+        Returns: Type or Value error if is not an integer or
+        if is not a positive number.
             """
         if type(value) is not int:
             raise TypeError('{} must be an integer'.format(name))
