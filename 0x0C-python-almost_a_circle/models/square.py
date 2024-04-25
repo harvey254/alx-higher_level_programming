@@ -29,12 +29,21 @@ class Square(Rectangle):
 
     @size.setter
     def size(self, value):
-        """width and height setter method"""
+        """Property retriever for size.
+
+        Returns:
+            int: size of one side of square.
+        """
         self.width = value
         self.height = value
 
     def update(self, *args, **kwargs):
-        """update square method"""
+        """Assigns an argument to each attribute
+
+        Args:
+            *args (tuple): arguments.
+            **kwargs (dict): double pointer to a dictionary.
+        """
         if args:
             i = 0
             listme = ['id', 'size', 'x', 'y']
@@ -47,5 +56,9 @@ class Square(Rectangle):
                 setattr(self, key, value)
 
     def to_dictionary(self):
-        """returns a dictionary of Square attributes"""
+        """Returns the dictionary representation of a Square.
+
+        Returns:
+            dict: square.
+        """
         return {'id': self.id, 'x': self.x, 'size': self.size, 'y': self.y}
