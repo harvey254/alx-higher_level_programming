@@ -8,18 +8,18 @@ import json
 
 
 class Base:
-    """ base class
+""" base class
     Attributes:
         _nb_objects: number of objects created
         id: id of object
-    """
+"""
     __nb_objects = 0
 
     def __init__(self, id=None):
-        """ Creates new instances 
+    """ Creates new instances 
         args:
             id: id of object
-        """
+    """
         if id is not None:
             self.id = id
         else:
@@ -28,7 +28,7 @@ class Base:
      
 
      def int_validator(self, name, value):
-        """ check if value is an integer """
+         """ check if value is an integer """
         if type(value) is not int:
             raise TypeError('{} must be an integer'.format(name))
         if value <= 0:
@@ -43,26 +43,24 @@ class Base:
 
     @staticmethod
     def to_json_string(list_dictionaries):
-        """ returns JSON string
+    """ returns JSON string
         args:
             list_dictionaries: list of dictionaries
         return:
             return serialized list or empty list
-        """
+    """
         return json.dumps(list_dictionaries or [])
 
     @staticmethod
     def from_json_string(json_string):
-        """ json to string static method
-        """
+        """ json to string static method"""
         if json_string:
             return json.loads(json_string)
         return []
 
     @classmethod
     def save_to_file(cls, list_objs):
-        """ writes JSON string to a file
-        """
+        """ writes JSON string to a file"""
         if list_objs:
             j = cls.to_json_string([obj.to_dictionary() for obj in list_objs])
         else:
@@ -72,8 +70,7 @@ class Base:
 
     @classmethod
     def create(cls, **dictionary):
-        """ return instance with all attributes 
-        """
+        """ return instance with all attributes """
         if cls.__name__ == "Rectangle":
             dummy = cls(1, 1)
         if cls.__name__ == "Square":
@@ -83,8 +80,7 @@ class Base:
 
     @classmethod
     def load_from_file(cls):
-        """ Returns a list of instances
-        """
+        """ Returns a list of instances"""
         try:
             filename = cls.__name__ + '.json'
             with open(filename, mode='r') as f:
