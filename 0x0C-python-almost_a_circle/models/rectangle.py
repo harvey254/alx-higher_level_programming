@@ -74,7 +74,6 @@ class Rectangle(Base):
         for row in range(self.height):
             print("{}{}".format(" " * self.x, "#" * self.width))
 
-
     def __str__(self):
         """print method"""
         return "[{}] ({}) {}/{} - {}/{}".format(self.__class__.__name__,
