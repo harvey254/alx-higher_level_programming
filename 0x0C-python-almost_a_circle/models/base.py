@@ -22,34 +22,28 @@ class Base:
         else:
             Base.__nb_objects += 1
             self.id = Base.__nb_objects
-     
+
     def int_validator(self, name, value):
-         """ method validator.
-         
-         Arguments;
-         @name: attribute to validate
-         @value: value to validate
-         
-         Returns:
-         Type or Value error if is not an integer or
-         if is not a positive number.
-        """
-         if type(value) is not int:
-            raise TypeError('{} must be an integer'.format(name))
-         if value <= 0:
-            raise ValueError('{} must be > 0'.format(name))
-     
-    def integer_validator2(self, name, value):
-        """ method validator
-        
+        """method validator.
         Arguments;
         @name: attribute to validate
         @value: value to validate
-        
-        Returns:
-        Type or Value error if is not an integer or
+        Returns: Type or Value error if is not an integer or
         if is not a positive number.
         """
+        if type(value) is not int:
+            raise TypeError('{} must be an integer'.format(name))
+        if value <= 0:
+            raise ValueError('{} must be > 0'.format(name))
+
+        def integer_validator2(self, name, value):
+            """ method validator
+            Arguments;
+            @name: attribute to validate
+            @value: value to validate
+            Returns: Type or Value error if is not an integer or
+            if is not a positive number.
+            """
         if type(value) is not int:
             raise TypeError('{} must be an integer'.format(name))
         if value < 0:
@@ -58,26 +52,21 @@ class Base:
     @staticmethod
     def to_json_string(list_dictionaries):
         """ returns JSON string
-        
         args:
-            list_dictionaries: list of dictionaries
-        
+        list_dictionaries: list of dictionaries
         return:
-            return serialized list or empty list
+        return serialized list or empty list
         """
         return json.dumps(list_dictionaries or [])
 
     @staticmethod
     def from_json_string(json_string):
         """ json to string static method
-        
         args:
-            json_string: json object string type
-        
+        json_string: json object string type
         return:
-            list of json strings
+        list of json strings
         """
-
         if json_string:
             return json.loads(json_string)
         return []
@@ -85,12 +74,10 @@ class Base:
     @classmethod
     def save_to_file(cls, list_objs):
         """ writes JSON string to a file
-        
         args:
-            list_objs: list of objects
-        
+        list_objs: list of objects
         return:
-            na
+        na
         """
         if list_objs:
             j = cls.to_json_string([obj.to_dictionary() for obj in list_objs])
@@ -101,27 +88,24 @@ class Base:
 
     @classmethod
     def create(cls, **dictionary):
-         """ return instance with all attributes set
-        
-        args:
-            dictionary: double pointer
-        
-        return:
-            instance with set attribute
+        """ return instance with all attributes set
+         args:
+         dictionary: double pointer
+         return:
+         instance with set attribute
         """
-         if cls.__name__ == "Rectangle":
-             dummy = cls(1, 1)
-         if cls.__name__ == "Square":
-             dummy = cls(1)
-         dummy.update(**dictionary)
-         return dummy
+        if cls.__name__ == "Rectangle":
+            dummy = cls(1, 1)
+        if cls.__name__ == "Square":
+            dummy = cls(1)
+        dummy.update(**dictionary)
+        return dummy
 
     @classmethod
     def load_from_file(cls):
         """ Returns a list of instances
-        
         return:
-            list of instance json string
+        list of instance json string
         """
         try:
             filename = cls.__name__ + '.json'
