@@ -36,7 +36,7 @@ class Base:
         if value <= 0:
             raise ValueError('{} must be > 0'.format(name))
 
-        def int_validator2(self, name, value):
+    def int_validator2(self, name, value):
             """ method validator
             Arguments;
             @name: attribute to validate
