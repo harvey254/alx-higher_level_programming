@@ -53,14 +53,25 @@ class Base:
 
     @staticmethod
     def from_json_string(json_string):
-        """ json to string static method"""
+        """ json to string static method
+        args:
+            json_string: json object string type
+        return:
+            list of json strings
+        """
+
         if json_string:
             return json.loads(json_string)
         return []
 
     @classmethod
     def save_to_file(cls, list_objs):
-        """ writes JSON string to a file"""
+        """ writes JSON string to a file
+        args:
+            list_objs: list of objects
+        return:
+            na
+        """
         if list_objs:
             j = cls.to_json_string([obj.to_dictionary() for obj in list_objs])
         else:
@@ -70,7 +81,12 @@ class Base:
 
     @classmethod
     def create(cls, **dictionary):
-        """ return instance with all attributes """
+         """ return instance with all attributes set
+        args:
+            dictionary: double pointer
+        return:
+            instance with set attribute
+        """
         if cls.__name__ == "Rectangle":
             dummy = cls(1, 1)
         if cls.__name__ == "Square":
@@ -80,7 +96,10 @@ class Base:
 
     @classmethod
     def load_from_file(cls):
-        """ Returns a list of instances"""
+        """Returns a list of instances
+        return:
+            list of instance json string
+        """
         try:
             filename = cls.__name__ + '.json'
             with open(filename, mode='r') as f:
