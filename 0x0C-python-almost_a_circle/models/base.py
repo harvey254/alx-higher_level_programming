@@ -1,14 +1,21 @@
 #!/usr/bin/python3
-""" Class Base module """
+""" Base module """
 import json
 
 
 class Base:
-    """ base class """
+    """ base class
+    Attributes:
+        _nb_objects: number of objects created
+        id: id of object
+    """
     __nb_objects = 0
 
     def __init__(self, id=None):
-        """ Creates new instances """
+        """ Creates new instances 
+        args:
+            id: id of object
+        """
         if id is not None:
             self.id = id
         else:

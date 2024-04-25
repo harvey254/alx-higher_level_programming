@@ -28,7 +28,7 @@ class Rectangle(Base):
         return self.__width
 
     @width.setter
-    def width (self, value):
+    def width(self, value):
         """ width setter method """
         self.int_validator('width', value)
         self.__width = value
@@ -44,7 +44,7 @@ class Rectangle(Base):
         self.int_validator('height', value)
         self.__height = value
 
-     @property
+    @property
     def x(self):
         """x getter method"""
         return self.__x
@@ -78,7 +78,7 @@ class Rectangle(Base):
                 print(' ', end='')
             for column in range(self.__width):
                 print('#', end='')
-         print()
+            print()
 
     def __str__(self):
         """print method"""
@@ -97,9 +97,8 @@ class Rectangle(Base):
         else:
             for key, value in kwargs.items():
                 setattr(self, key, value)
-       
 
     def to_dictionary(self):
-        """return dict representation of Rectangle"""
+        """ return dict representation of Rectangle """
         return {'x': self.x, 'y': self.y, 'id': self.id,
                 'height': self.height, 'width': self.width}
