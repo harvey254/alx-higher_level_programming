@@ -65,6 +65,10 @@ class Rectangle(Base):
         self.int_validator2('y', value)
         self.__y = value
 
+    def area(self):
+        """ returns area of rectangle """
+        return self.__width * self.__height
+
     def display(self):
         """print into stdout
         return: na
